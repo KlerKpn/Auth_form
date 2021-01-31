@@ -1,0 +1,21 @@
+.App{
+  min-height: 100vh;
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 5%;
+  margin: 0 auto;
+
+}
+
+.reg_title{
+  color: #2C2738;
+  margin-bottom: 58px;
+}
+
+.reg_title_text{
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 44px;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,48 @@
+/* Принял решение не импортировать стили, пусть они похожи, но всеже это другой элемент */
+
+.Select_block{
+    width: 100%;
+}
+
+.Select{
+    width: 100%;
+    height: 52px; 
+    padding: 16px;
+    background: #FFFFFF;
+    color: #7C9CBF;
+    border: 1px solid #DBE2EA;
+    box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+    border-radius: 6px;
+    outline: none;
+    /* -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none; */
+}
+
+.Select:focus{
+    border: 2px solid #0880AE;
+}
+
+.Select:active{
+    border: 2px solid #0880AE;
+}
+
+
+option{
+    
+    box-sizing: content-box;
+    padding: 28px;
+    height: 44px;
+    color: #756F86;
+}
+
+.Select_option:focus{
+    color: #EBF4F8;
+}
+
+.label{
+    margin: 7px 0;
+    color: #756F86;
+    font-weight: 500;
+    line-height: 21px;
+}

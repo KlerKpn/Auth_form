@@ -1,0 +1,43 @@
+.Input_block{
+    width: 100%;
+}
+.Input_label{
+    display: inline-block;
+    margin: 7px 0;
+    color: #756F86;
+    font-weight: 500px;
+    line-height: 21px
+}
+
+.Input{
+    width: 100%;
+    height: 52px; 
+    padding: 16px;
+    border: 1px solid #DBE2EA;
+    box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+    border-radius: 6px;
+    outline: none;
+}
+
+.Input:focus{
+    border: 2px solid #0880AE;
+}
+
+.Input::placeholder{
+    color: #7C9CBF;
+}
+
+.Input_valid{
+    display: flex;
+    align-items: center;
+    height: 18px;
+}
+
+.Input_err{
+    margin-top: 8px;
+    font-size: 14px;
+    color: #FF7171;
+    font-weight: 400;
+    line-height: 18.2px;
+}
+

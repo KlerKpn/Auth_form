@@ -1,0 +1,21 @@
+.RadioBtn{
+    display: flex;
+    align-items: center;
+    margin: 35px 0;
+}
+
+.RadioBtn_input{
+    height: 28px;
+    width: 28px;
+    background: #FFFFFF;
+    border: 1px solid #DBE2EA;
+    box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+    border-radius: 4px;
+    margin-right: .5rem;
+}
+
+.RadioBtn_title{
+    font-weight: 500;
+    line-height: 21px;
+    color: #756F86;
+}
