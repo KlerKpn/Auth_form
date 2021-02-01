@@ -8,19 +8,19 @@ import RadioBtn from './components/UI/RadioBtn/RadioBtn'
 function App() {
 
 	function validateName(name) {
-		const re = /^[a-z ,.'-]+$/i
+		const re = /^[а-яА-Я\p{Cyrillic}\s]+$/ 
 		return re.test(name) && name.length > 1
 	}
 
 	function validatePhone(phone) {
-		const re = /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/
+		const re = /^(\+7|7|8)[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/
 		return re.test(phone)
 	}
 
 	function validateEmail(email) {
 		const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return re.test(String(email).toLowerCase());
-	} // можно также воспользоваться библиотекой is_js для чистоты кода, решил не прегружать из-за одной функции
+	}
 	const [allValid, setAllValid] = useState(false)
 	const [radio, setRadio] = useState(false)
 	const [formValid, setFormValid] = useState(false)
@@ -139,7 +139,7 @@ function App() {
 	}
 
 	const onChangeRadio = value => { setRadio(value.checked) }
-	const onChangeOption = value => { value !== 'язык' ? setOption(true) : setOption(false) }
+	const onChangeOption = value => { value !== 'Язык' ? setOption(true) : setOption(false) }
 
 	useEffect(() => {
 		const bol = [formValid, radio, option].filter(el => el !== true).length > 0
@@ -154,7 +154,7 @@ function App() {
 					Регистрация
         		</div>
 				<div className={styles.reg_title_auth}>
-					Уже есть аккаунт? <a href='#'>Войти</a>
+					Уже есть аккаунт? <a href='/'>Войти</a>
 				</div>
 			</div>
 

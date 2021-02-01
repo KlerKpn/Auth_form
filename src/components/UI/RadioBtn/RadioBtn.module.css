@@ -18,6 +18,8 @@
     align-items: center;
     justify-content: center;
     outline: none;
+    cursor: pointer;
+    margin-left: 0;
 }
 
 .RadioBtn_title{

@@ -16,7 +16,7 @@ const RadioBtn = props => {
                 htmlFor={id}
                 className={styles.RadioBtn_title}
             >
-                Принимаю <a href='#'>условия</a> пользования
+                Принимаю <a href='/'>условия</a> использования
              </label>
         </div>
     )
