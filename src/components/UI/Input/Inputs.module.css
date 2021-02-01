@@ -3,7 +3,7 @@
 }
 .Input_label{
     display: inline-block;
-    margin: 7px 0;
+    margin-bottom: 7px;
     font-weight: 500;
     color: #756F86;
     line-height: 21px
@@ -17,6 +17,7 @@
     box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
     border-radius: 6px;
     outline: none;
+    margin-bottom: .5rem;
 }
 
 .Input:focus{
@@ -37,7 +38,7 @@
 }
 
 .Input_err{
-    margin-top: 8px;
+    margin-bottom: 8px;
     font-size: 14px;
     color: #FF7171;
     font-weight: 400;

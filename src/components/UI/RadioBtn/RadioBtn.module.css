@@ -12,10 +12,33 @@
     box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
     border-radius: 4px;
     margin-right: .5rem;
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
 }
 
 .RadioBtn_title{
     font-weight: 500;
     line-height: 21px;
     color: #756F86;
+    
+}
+
+.RadioBtn_input::after{
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #0880AE;
+    display: none;
+}
+
+.RadioBtn_input:checked{
+    border: 2px solid #0880AE;
+}
+
+.RadioBtn_input:checked::after{
+    display: block;
 }
