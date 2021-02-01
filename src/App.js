@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Input from './components/UI/Input/Input'
 import styles from './App.module.css'
 import Button from './components/UI/Button/Button'
@@ -6,6 +6,11 @@ import Select from './components/UI/Select/Select'
 import RadioBtn from './components/UI/RadioBtn/RadioBtn'
 
 function App() {
+
+	function validateName(name) {
+		const re = /^[a-z ,.'-]+$/i
+		return re.test(name) && name.length > 1
+	}
 
 	function validatePhone(phone) {
 		const re = /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/
@@ -16,9 +21,14 @@ function App() {
 		const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return re.test(String(email).toLowerCase());
 	} // можно также воспользоваться библиотекой is_js для чистоты кода, решил не прегружать из-за одной функции
-
+	const [allValid, setAllValid] = useState(false)
 	const [radio, setRadio] = useState(false)
 	const [formValid, setFormValid] = useState(false)
+	const [option, setOption] = useState('Язык')
+	const [selectData] = useState({
+		default: 'Язык',
+		data: ['Английский', 'Русский', 'Китайский', 'Испанский']
+	})
 	const [inputs, setInputs] = useState([
 		{
 			label: 'Имя',
@@ -30,7 +40,7 @@ function App() {
 			touched: false,
 			validation: {
 				required: true,
-				minLength: 2
+				name: true
 			}
 		},
 		{
@@ -78,8 +88,8 @@ function App() {
 			isValid = validateEmail(value) && isValid
 		}
 
-		if (validation.minLength) {
-			isValid = value.length >= validation.minLength && isValid
+		if (validation.name) {
+			isValid = validateName(value) && isValid
 		}
 
 		if (validation.phone) {
@@ -128,11 +138,18 @@ function App() {
 		})
 	}
 
-	const onChangeRadio = (value) => {
-		setRadio(value.checked)
-	}
+	const onChangeRadio = value => { setRadio(value.checked) }
+	const onChangeOption = value => { setOption(value) }
 
-	const disBtn = [formValid ,radio].filter(el => el !== true).length > 0
+	useEffect(() => {
+		const bol = [formValid, radio].filter(el => el !== true).length > 0
+		if(option !== 'Язык'){
+			setAllValid(bol)
+		} else {
+			
+		}
+		
+	})
 
 	return (
 		<form className={styles.App} onSubmit={submitHandler}>
@@ -152,14 +169,17 @@ function App() {
 
 			</div>
 
-			<Select />
+			<Select
+				onClick={onChangeOption}
+				data={selectData}
+			/>
 
 			<RadioBtn
 				onChangeRadio={onChangeRadio}
 			/>
 
 			<Button
-				disabled={disBtn}
+				disabled={allValid}
 				label='Зарегистрироваться'
 			/>
 

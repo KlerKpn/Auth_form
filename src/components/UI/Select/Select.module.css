@@ -5,6 +5,7 @@
 }
 
 .Select{
+    position: relative;
     width: 100%;
     height: 52px; 
     padding: 16px;
@@ -14,9 +15,6 @@
     box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
     border-radius: 6px;
     outline: none;
-    /* -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none; */
 }
 
 .Select:focus{
@@ -27,22 +25,49 @@
     border: 2px solid #0880AE;
 }
 
+.Select_option_case{
+    position: absolute;
+    margin-top: 4px;
+    width: 100%;
+    height: 200px;
+    padding: 12px 0px;
+    left: 0%;
+    right: 0%;
+    top: 50px;
+    bottom: 0%;
+    background: #FFFFFF;
+    border: 1px solid #DBE2EA;
+    box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04), 0px 20px 20px rgba(44, 39, 56, 0.04);
+    border-radius: 6px;
+    z-index: 5;
+}
 
-option{
-    
-    box-sizing: content-box;
-    padding: 28px;
+.Select_option{
+    padding: 12px 15px;
     height: 44px;
     color: #756F86;
+    cursor: pointer;
+
+    font-weight: 400; 
+    line-height: 20.8px;
 }
 
-.Select_option:focus{
-    color: #EBF4F8;
+.Select_option:hover{
+    background: #EBF4F8;
 }
 
-.label{
+.Select_label{
     margin: 7px 0;
     color: #756F86;
     font-weight: 500;
     line-height: 21px;
+}
+
+.Select_title{
+    font-size: 16px;
+}
+
+
+.Select_title.touched{
+    color: #2C2738;
 }

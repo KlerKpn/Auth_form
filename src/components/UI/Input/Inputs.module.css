@@ -5,7 +5,6 @@
     display: inline-block;
     margin: 7px 0;
     color: #756F86;
-    font-weight: 500px;
     line-height: 21px
 }
 
@@ -24,7 +23,10 @@
 }
 
 .Input::placeholder{
+    display: inline;
+    line-height: 21px;
     color: #7C9CBF;
+    font-size: 16px;
 }
 
 .Input_valid{

@@ -5,18 +5,15 @@
 
 *{
   box-sizing: border-box;
-}
-
-html{
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
   font-size: 16px;
 }
 
 body {
   margin: 0;
   min-width: 360px;
-  font-family: IBM Plex Sans;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 22px;
 }
 

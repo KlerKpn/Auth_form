@@ -3,10 +3,6 @@ import styles from './RadioBtn.module.css'
 
 
 const RadioBtn = props => {
-    // const ref = useRef(null)
-    // function isChecked(){
-    //     console.log(ref.current)
-    // }
     const id = Math.random()
     return (
         <div className={styles.RadioBtn}>
@@ -19,7 +15,8 @@ const RadioBtn = props => {
             <label
                 htmlFor={id}
                 className={styles.RadioBtn_title}
-            >Принимаю <a href='#'>условия</a> пользования
+            >
+                Принимаю <a href='#'>условия</a> пользования
              </label>
         </div>
     )
