@@ -24,7 +24,7 @@ function App() {
 	const [allValid, setAllValid] = useState(false)
 	const [radio, setRadio] = useState(false)
 	const [formValid, setFormValid] = useState(false)
-	const [option, setOption] = useState('Язык')
+	const [option, setOption] = useState(false)
 	const [selectData] = useState({
 		default: 'Язык',
 		data: ['Английский', 'Русский', 'Китайский', 'Испанский']
@@ -139,12 +139,11 @@ function App() {
 	}
 
 	const onChangeRadio = value => { setRadio(value.checked) }
-	const onChangeOption = value => { setOption(value) }
+	const onChangeOption = value => { value !== 'язык' ? setOption(true) : setOption(false) }
 
 	useEffect(() => {
-		const bol = [formValid, radio].filter(el => el !== true).length > 0
-			setAllValid(bol)
-			console.log(allValid)
+		const bol = [formValid, radio, option].filter(el => el !== true).length > 0
+		setAllValid(bol)
 	})
 
 	return (
