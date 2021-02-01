@@ -16,11 +16,6 @@ const Select = props => {
     const selectOption = el => { setActive(el); changeShow(); props.onClick(el) }
     const touchHandler = () => { setTouched(true) }
 
-    let cls = [styles.Select_title]
-    if (touched) {
-        cls.push(styles.touched)
-    }
-
     return (
         <div className={styles.Select_block} onClick={changeShow}>
             <div className={styles.Select_label}>
@@ -29,9 +24,8 @@ const Select = props => {
             <div className={styles.Select}>
 
                 <div
-                    className={cls.join(' ')}
+                    className={touched ? styles.Select_title_touched : styles.Select_title}
                     onClick={touchHandler}
-
                 >
                     {active || props.data.default}
                 </div>

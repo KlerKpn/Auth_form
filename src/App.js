@@ -143,12 +143,8 @@ function App() {
 
 	useEffect(() => {
 		const bol = [formValid, radio].filter(el => el !== true).length > 0
-		if(option !== 'Язык'){
 			setAllValid(bol)
-		} else {
-			
-		}
-		
+			console.log(allValid)
 	})
 
 	return (
