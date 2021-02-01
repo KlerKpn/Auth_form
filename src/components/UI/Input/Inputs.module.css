@@ -4,6 +4,7 @@
 .Input_label{
     display: inline-block;
     margin: 7px 0;
+    font-weight: 500;
     color: #756F86;
     line-height: 21px
 }
